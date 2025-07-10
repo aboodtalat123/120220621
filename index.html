@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abood Talat - Personal Portfolio</title>
+    <!-- روابط الخطوط والأيقونات ومكتبة الحركات -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- رابط ملف الـ CSS تبعنا -->
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <!-- أيقونة الموقع اللي بتظهر بالمتصفح -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- زر القائمة اللي بيظهر بالشاشات الصغيرة عشان يفتح ويقفل السايدبار -->
+    <i class="ri-menu-2-line mobile-menu-toggler" id="nav-toggle" aria-controls="main-side-navigation" aria-expanded="false"></i>
+
+    <!-- الشريط الجانبي (السايدبار) تبع الموقع -->
+    <aside class="main-side-navigation" id="sidebar">
+        <div class="side-profile-box">
+            <!-- صورة البروفايل تبعي -->
+            <img src="assets/images/logo.jpg" alt="صورة ملف شخصي لعبود طلعت" class="profile-picture-round">
+            <div class="signature-text-holder">
+                <!-- اسمي بخط الشعار -->
+                <span class="my-signature-font">Abood Talat</span>
+            </div>
+        </div>
+
+        <!-- قائمة التنقل الرئيسية في السايدبار -->
+        <nav class="side-menu-nav">
+            <ul class="navigation-list-items">
+                <li class="menu-list-entry">
+                    <a href="#home" class="nav-link-item active">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="menu-list-entry">
+                    <a href="#about" class="nav-link-item">
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="menu-list-entry">
+                    <a href="#services" class="nav-link-item">
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="menu-list-entry">
+                    <a href="#work" class="nav-link-item">
+                        <span>Work</span>
+                    </a>
+                </li>
+                <li class="menu-list-entry">
+                    <a href="#blog" class="nav-link-item">
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li class="menu-list-entry">
+                    <a href="#contact" class="nav-link-item">
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- منطقة التحكم بالثيم (فاتح/داكن) -->
+        <div class="theme-switcher-area">
+            <i class="ri-moon-line mode-change-icon" id="theme-toggle"></i> 
+        </div>
+        
+        <!-- منطقة حقوق النشر في أسفل السايدبار -->
+        <div class="sidebar-bottom-area">
+            <div class="bottom-copyright-text">
+                <span>Copyright&copy; 2021 <span class="colored-name">Abood Talat</span>.</span>
+                <br>
+                <span>All Right Reserved.</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- المحتوى الرئيسي للصفحة -->
+    <main class="primary-page-content">
+        <!-- قسم الصفحة الرئيسية (Home) -->
+        <section class="welcome-area page-section" id="home">
+            <div class="site-content-container layout-grid hero-content-wrapper">
+                <div class="hero-text-block">
+                    <!-- صندوق معلوماتي في قسم Home -->
+                    <div class="personal-info-overlay">
+                        <h2 class="main-heading-name">Abood Talat</h2>
+                        <h1 class="job-role-text">Front-End Developer</h1>
+                        <span class="decorative-line-break"></span>
+                        <div>
+                            <i class="ri-phone-line"></i>
+                            <p>+970567609485</p>
+                        </div>
+                        <div>
+                            <i class="ri-mail-line"></i>
+                            <p>aboodtalat123@gmail.com</p>
+                        </div>
+                        <div>
+                            <i class="ri-map-pin-line"></i>
+                            <p>Palestine, Gaza, Elnaser Street</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم عني (About Me) -->
+        <section class="about-me-section page-section" id="about">
+            <div class="site-content-container">
+                <div class="about-section-heading about-section-heading--left">
+                    <span class="small-section-label about-small-title">About Me</span>
+                    <h2 class="main-section-title about-title-name-align-left">Abood Talat</h2>
+                </div>
+
+                <div class="about-layout-grid layout-grid">
+                    <div class="about-text-content">
+                        <p class="about-me-paragraph">
+                            I’m a frontend developer with more than 4 years of experience. If you need to receive responsive, pixel perfect and cross-browser website – I’m a developer you’re looking for.
+                        </p>
+
+                        <div class="personal-details-columns">
+                            <ul class="details-list-items details-list-part1">
+                                <li><span class="detail-label-text">Birthday</span> 7 October 2004</li>
+                                <li><span class="detail-label-text">Degree</span> Bachelor's</li>
+                                <li><span class="detail-label-text">Website</span> <a href="http://www.aboodtalat.com" target="_blank" rel="noopener noreferrer">www.aboodtalat.com</a></li>
+                                <li><span class="detail-label-text">Mail</span> <a href="mailto:aboodtalat123@gmail.com">aboodtalat123@gmail.com</a></li>
+                            </ul>
+                            <ul class="details-list-items details-list-part2">
+                                <li><span class="detail-label-text">Phone</span> +970 567609485</li>
+                                <li><span class="detail-label-text">LinkedIn</span> <a href="https://linkedin.com/in/aboodtalat" target="_blank" rel="noopener noreferrer">@Abood Talat</a></li>
+                                <li><span class="detail-label-text">Study</span> Islamic University of Gaza</li>
+                                <li><span class="detail-label-text">Freelance</span> Available</li>
+                            </ul>
+                        </div>
+
+                        <!-- زر تحميل السيرة الذاتية -->
+                        <a href="assets/cv/cv.pdf" download class="action-button">
+                            Download CV <i class="ri-download-line"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- صورة قسم About -->
+                    <img src="assets/images/round.jpg" alt="About Me Image" class="about-my-photo">
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الخدمات (Services) -->
+        <section class="my-services-offered page-section" id="services">
+            <div class="site-content-container">
+            <span class="small-section-label">What I Do</span>
+            <h2 class="main-section-title">Services</h2>
+            <div class="layout-grid services-grid-layout">
+                <div class="service-feature-card" data-aos="fade-up" data-aos-duration="1000">
+                    <i class='bx bx-laptop service-icon-graphic'></i>
+                    <h3 class="service-card-title">Website</h3>
+                    <p class="service-card-description">
+                        Vivamus ravida suma eveti semeni conse convallis. Tristique busio the nivite dianne one nivami.
+                    </p>
+                    <span class="service-order-number">01</span>
+                </div>
+
+                <div class="service-feature-card" data-aos="fade-up" data-aos-duration="1100">
+                    <i class='bx bx-search-alt service-icon-graphic'></i>
+                    <h3 class="service-card-title">Seo Marketing</h3>
+                    <p class="service-card-description">
+                        Vivamus ravida suma eveti semeni conse convallis. Tristique busio the nivite dianne one nivami.
+                    </p>
+                    <span class="service-order-number">02</span>
+                </div>
+
+                <div class="service-feature-card" data-aos="fade-up" data-aos-duration="1200">
+                    <i class='bx bx-cart service-icon-graphic'></i>
+                    <h3 class="service-card-title">Ecommerce</h3>
+                    <p class="service-card-description">
+                        Vivamus ravida suma eveti semeni conse convallis. Tristique busio the nivite dianne one nivami.
+                    </p>
+                    <span class="service-order-number">03</span>
+                </div>
+
+                <div class="service-feature-card" data-aos="fade-up" data-aos-duration="1300">
+                    <i class='bx bx-palette service-icon-graphic'></i>
+                    <h3 class="service-card-title">Graphic Design</h3>
+                    <p class="service-card-description">
+                        Vivamus ravida suma eveti semeni conse convallis. Tristique busio the nivite dianne one nivami.
+                    </p>
+                    <span class="service-order-number">04</span>
+                </div>
+
+                <div class="service-feature-card" data-aos="fade-up" data-aos-duration="1400">
+                    <i class='bx bx-trending-up service-icon-graphic'></i>
+                    <h3 class="service-card-title">Digital Marketing</h3>
+                    <p class="service-card-description">
+                        Vivamus ravida suma eveti semeni conse convallis. Tristique busio the nivite dianne one nivami.
+                    </p>
+                    <span class="service-order-number">05</span>
+                </div>
+
+                <div class="service-feature-card" data-aos="fade-up" data-aos-duration="1500">
+                    <i class='bx bx-share-alt service-icon-graphic'></i>
+                    <h3 class="service-card-title">Social Media</h3>
+                    <p class="service-card-description">
+                        Vivamus ravida suma eveti semeni conse convallis. Tristique busio the nivite dianne one nivami.
+                    </p>
+                    <span class="service-order-number">06</span>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- قسم الأعمال (Work) -->
+        <section class="portfolio-work-showcase page-section" id="work">
+            <div class="site-content-container">
+            <span class="small-section-label">Recent Work Completed</span>
+            <h2 class="main-section-title">Work Showcase</h2>
+
+            <div class="layout-grid project-gallery-grid">
+                <div class="project-item-card" data-aos="zoom-in" data-aos-duration="1000">
+                    <img src="assets/images/11.jpg" alt="Visual Identity Design Project" class="project-thumbnail-image">
+                    <div class="project-overlay-info">
+                        <h3 class="project-card-title">Visual Identity Design Project</h3>
+                        <span>Graphic Design</span>
+                    </div>
+                </div>
+
+                <div class="project-item-card" data-aos="zoom-in" data-aos-duration="1100">
+                    <img src="assets/images/22.jpg" alt="E-commerce Website Development" class="project-thumbnail-image">
+                    <div class="project-overlay-info">
+                        <h3 class="project-card-title">E-commerce Website Development</h3>
+                        <span>Web Development</span>
+                    </div>
+                </div>
+
+                <div class="project-item-card" data-aos="zoom-in" data-aos-duration="1200">
+                    <img src="assets/images/33.jpg" alt="Mobile Application Design (UI/UX)" class="project-thumbnail-image">
+                    <div class="project-overlay-info">
+                        <h3 class="project-card-title">Mobile Application Design (UI/UX)</h3>
+                        <span>UI/UX Design</span>
+                    </div>
+                </div>
+
+                <div class="project-item-card" data-aos="zoom-in" data-aos-duration="1300">
+                    <img src="assets/images/44.jpg" alt="Personal Blog Redesign" class="project-thumbnail-image">
+                    <div class="project-overlay-info">
+                        <h3 class="project-card-title">Personal Blog Redesign</h3>
+                        <span>Frontend Development</span>
+                    </div>
+                </div>
+
+                <div class="project-item-card" data-aos="zoom-in" data-aos-duration="1400">
+                    <img src="assets/images/55.jpg" alt="Admin Dashboard Build" class="project-thumbnail-image">
+                    <div class="project-overlay-info">
+                        <h3 class="project-card-title">Admin Dashboard Build</h3>
+                        <span>Web Development</span>
+                    </div>
+                </div>
+
+                <div class="project-item-card" data-aos="zoom-in" data-aos-duration="1500">
+                    <img src="assets/images/66.jpg" alt="Startup Company Website Creation" class="project-thumbnail-image">
+                    <div class="project-overlay-info">
+                        <h3 class="project-card-title">Startup Company Website Creation</h3>
+                        <span>Design & Development</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- قسم المدونة (Blog) -->
+        <section class="my-blog-posts page-section" id="blog">
+            <div class="site-content-container">
+                <span class="small-section-label">My Blog</span>
+                <h2 class="main-section-title">Current News</h2>
+            
+            <div class="layout-grid blog-posts-grid">
+                <div class="blog-entry-card" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="assets/images/01.jpg" alt="Developer: Watch Out For These Burnout Symptoms" class="blog-post-image">
+                    <div class="blog-card-details">
+                        <span class="blog-post-date">Web Design - 18 Dec, 2021</span>
+                        <h3 class="blog-post-title">Developer: Watch Out For These Burnout Symptoms</h3>
+                    </div>
+                </div>
+
+                <div class="blog-entry-card" data-aos="fade-up" data-aos-duration="1100">
+                    <img src="assets/images/02.jpg" alt="From Perfect To Positive" class="blog-post-image">
+                    <div class="blog-card-details">
+                        <span class="blog-post-date">Social Media - 18 Dec, 2021</span>
+                        <h3 class="blog-post-title">From Perfect To Positive</h3>
+                    </div>
+                </div>
+
+                <div class="blog-entry-card" data-aos="fade-up" data-aos-duration="1200">
+                    <img src="assets/images/03.jpg" alt="Importance Of Being A Team Member" class="blog-post-image">
+                    <div class="blog-card-details">
+                        <span class="blog-post-date">Digital Marketing - 18 Dec, 2021</span>
+                        <h3 class="blog-post-title">Importance Of Being A Team Member</h3>
+                    </div>
+                </div>
+
+                <div class="blog-entry-card" data-aos="fade-up" data-aos-duration="1300">
+                    <img src="assets/images/04.jpg" alt="What Is Customer Experience?" class="blog-post-image">
+                    <div class="blog-card-details">
+                        <span class="blog-post-date">Development - 18 Dec, 2021</span>
+                        <h3 class="blog-post-title">What Is Customer Experience?</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- قسم التواصل (Contact) -->
+        <section class="contact-me-section page-section" id="contact">
+            <div class="site-content-container">
+            
+                <span class="small-section-label">Get In Touch</span>
+                <h2 class="main-section-title">Contact Me</h2>
+
+                <div class="layout-grid contact-layout-wrapper">
+                    <div class="contact-info-block">
+                        <p class="contact-intro-text">
+                            I’m available for commissions and collaborations, and I’m excited to hear from you about new projects.
+                        </p>
+
+                        <ul class="contact-details-list">
+                            <li class="single-contact-line">
+                                <i class="ri-phone-line"></i>
+                                <div>
+                                    <h3 class="contact-detail-label">Phone</h3>
+                                    <a href="tel:+970567609485" class="contact-info-link">+970 567609485</a>
+                                </div>
+                            </li>
+                            <li class="single-contact-line">
+                                <i class="ri-mail-line"></i>
+                                <div>
+                                    <h3 class="contact-detail-label">Mail</h3>
+                                    <a href="mailto:aboodtalat123@gmail.com" class="contact-info-link">aboodtalat123@gmail.com</a>
+                                </div>
+                            </li>
+                            <li class="single-contact-line">
+                                <i class="ri-link"></i>
+                                <div>
+                                    <h3 class="contact-detail-label">Social Media</h3>
+                                    <a href="https://linkedin.com/in/aboodtalat" target="_blank" rel="noopener noreferrer" class="contact-info-link">@Abood Talat (LinkedIn)</a>
+                                </div>
+                            </li>
+                            <li class="single-contact-line">
+                                <i class="ri-map-pin-line"></i>
+                                <div>
+                                    <h3 class="contact-detail-label">Location</h3>
+                                    <a href="https://www.google.com/maps/search/Palestine,+Gaza,+Elnaser+Street" target="_blank" rel="noopener noreferrer" class="contact-info-link">Palestine, Gaza, Elnaser Street</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form action="" class="message-submission-form">
+                        <div class="form-input-fields-group"> 
+                            <div class="form-input-wrapper">
+                                <input type="text" class="form-text-input" placeholder=" " id="contact-name">
+                                <label for="contact-name" class="form-field-label">Name</label>
+                            </div>
+                            <div class="form-input-wrapper">
+                                <input type="email" class="form-text-input" placeholder=" " id="contact-email">
+                                <label for="contact-email" class="form-field-label">Email</label>
+                            </div>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <input type="text" class="form-text-input" placeholder=" " id="contact-subject">
+                            <label for="contact-subject" class="form-field-label">Subject</label>
+                        </div>
+                        <div class="form-input-wrapper textarea-input-wrapper">
+                            <textarea name="message" id="contact-message" cols="30" rows="10" class="form-text-input" placeholder=" "></textarea>
+                            <label for="contact-message" class="form-field-label">Message</label>
+                        </div>
+
+                        <button type="submit" class="action-button">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر (أسفل الصفحة) -->
+    <footer class="site-footer-area">        
+        <span class="copyright-notice-text">&copy; 2021 <span class="colored-name">Abood Talat</span>. All Right Reserved.</span>
+        <div class="social-media-links-group">
+            <a href="https://twitter.com/AboodTalat" target="_blank" rel="noopener noreferrer" class="social-icon-link"><i class="ri-twitter-x-fill"></i></a>
+            <a href="https://instagram.com/AboodTalat" target="_blank" rel="noopener noreferrer" class="social-icon-link"><i class="ri-instagram-line"></i></a>
+            <a href="https://linkedin.com/in/aboodtalat" target="_blank" rel="noopener noreferrer" class="social-icon-link"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://dribbble.com/AboodTalat" target="_blank" rel="noopener noreferrer" class="social-icon-link"><i class="ri-dribbble-fill"></i></a>
+        </div>
+    </footer>
+    
+    <!-- زر الصعود لأعلى الصفحة -->
+    <a href="#" class="back-to-top-button" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!-- رابط مكتبة AOS للجافاسكريبت -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- رابط ملف الجافاسكريبت تبعنا -->
+    <script src="assets/JS/script.js"></script>
+</body>
+</html>

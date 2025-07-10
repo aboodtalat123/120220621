@@ -1,0 +1,1524 @@
+/* هذا الملف فيه كل الستايلات تبع الموقع */
+
+/*==================== الخطوط اللي جبناها من جوجل وخط الشعار ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
+
+/* تعريف الخط الخاص بالشعار اللي نزلناه */
+@font-face {
+    font-family: 'TuesdayNight';
+    src: url('../fonts/TuesdayNight-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*==================== المتغيرات تبع الألوان والأحجام (عشان نسهل التعديل) ====================*/
+:root {
+    --first-color: hsl(28, 50%, 45%); /* اللون الأساسي للموقع (بني) */
+    --second-color: hsl(0, 0%, 97%); /* لون ثانوي فاتح */
+    --title-color: hsl(0, 0%, 15%); /* لون العناوين الرئيسية */
+    --text-color: hsl(0, 0%, 35%); /* لون النصوص العادية */
+    --white-color: hsl(0, 0%, 100%); /* لون أبيض نقي */
+    --body-color: hsl(0, 0%, 100%); /* لون خلفية الصفحة الأساسي في الوضع الفاتح */
+    --container-color: hsl(0, 0%, 100%); /* لون خلفية الصناديق والحاويات في الوضع الفاتح */
+    --shadow-color: rgba(0, 0, 0, 0.05); /* لون الظلال الخفيفة */
+    --brown-overlay: hsla(28, 50%, 45%, 0.05); /* طبقة شفافة بنية فاتحة */
+    --light-brown-hover: hsl(28, 40%, 85%); /* لون بني فاتح للتحويم */
+    --sidebar-bg: hsl(0, 0%, 98%); /* خلفية السايدبار */
+    --sidebar-item-bg-hover: hsl(28, 15%, 90%); /* خلفية عناصر السايدبار عند التحويم */
+    --light-brown: hsl(28, 65%, 70%); /* بني فاتح */
+    --very-light-brown: hsla(28, 80%, 90%, 0.5); /* بني فاتح جداً وشفاف */
+    --darker-brown: hsl(28, 60%, 30%); /* بني أغمق */
+    --darkest-brown-icon: hsl(28, 70%, 20%); /* أغمق درجة بني للأيقونات */
+    --work-overlay-brown: hsla(28, 60%, 30%, 0.8); /* طبقة تراكب بنية على صور الأعمال */
+
+    /* أحجام الخطوط اللي بنستخدمها */
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+    --tiny-font-size: 0.6875rem;
+
+    /* أوزان الخطوط */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* مسافات الهوامش السفلية */
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    --mb-4: 4rem;
+
+    --body-font: 'Jost', sans-serif; /* الخط الأساسي للجسم */
+}
+
+/*==================== متغيرات الثيم الداكن (لما المستخدم يختار الوضع الداكن) ====================*/
+body.dark-theme {
+    --first-color: hsl(28, 60%, 55%); /* لون أساسي مختلف للوضع الداكن */
+    --second-color: hsl(0, 0%, 5%); /* لون ثانوي للوضع الداكن */
+    --title-color: hsl(0, 0%, 95%); /* لون العناوين في الوضع الداكن */
+    --text-color: hsl(0, 0%, 75%); /* لون النصوص في الوضع الداكن */
+    --body-color: hsl(0, 0%, 8%); /* لون خلفية الصفحة في الوضع الداكن */
+    --container-color: hsl(0, 0%, 12%); /* لون خلفية الصناديق في الوضع الداكن */
+    --shadow-color: rgba(0, 0, 0, 0.6); /* ظلال أغمق للوضع الداكن */
+    --brown-overlay: hsla(28, 40%, 35%, 0.2);
+    --light-brown-hover: hsl(28, 40%, 20%);
+    --sidebar-bg: hsl(0, 0%, 10%);
+    --sidebar-item-bg-hover: hsl(28, 20%, 25%);
+    --light-brown: hsl(28, 55%, 50%);
+    --very-light-brown: hsla(28, 30%, 30%, 0.5);
+    --darker-brown: hsl(28, 70%, 15%);
+    --darkest-brown-icon: hsl(28, 80%, 10%);
+    --work-overlay-brown: hsla(28, 70%, 15%, 0.8);
+}
+
+/*==================== الستايلات الأساسية لكل عناصر الصفحة ====================*/
+* {
+    box-sizing: border-box; /* عشان الحجم يكون محسوب صح مع البادينغ والبوردر */
+    padding: 0; /* نشيل أي بادينغ افتراضي */
+    margin: 0; /* نشيل أي مارجن افتراضي */
+}
+
+html {
+    scroll-behavior: smooth; /* عشان التمرير يكون ناعم لما نضغط على روابط الأقسام */
+}
+
+body {
+    font-family: var(--body-font); /* نستخدم الخط الأساسي اللي عرفناه */
+    font-size: var(--normal-font-size); /* حجم الخط العادي */
+    background-color: var(--body-color); /* لون الخلفية حسب الثيم */
+    color: var(--text-color); /* لون النص حسب الثيم */
+    transition: background-color 0.4s, color 0.4s; /* حركة ناعمة لما نغير الثيم */
+    line-height: 1.6; /* مسافة بين الأسطر للقراءة المريحة */
+}
+
+h1, h2, h3 {
+    color: var(--title-color); /* لون العناوين */
+    font-weight: var(--font-semi-bold); /* وزن الخط للعناوين */
+    line-height: 1.2; /* مسافة بين أسطر العناوين */
+}
+
+ul {
+    list-style: none; /* نشيل النقاط تبع القوائم */
+}
+
+a {
+    text-decoration: none; /* نشيل الخط اللي تحت الروابط */
+}
+
+img {
+    max-width: 100%; /* الصور ما تطلع برا حجمها */
+    height: auto; /* الارتفاع يتعدل تلقائي عشان ما تتشوه الصورة */
+}
+
+/*==================== كلاسات بنستخدمها بأكثر من مكان (عشان الكود يكون مرتب) ====================*/
+.site-content-container { /* هذا الكلاس للحاويات الرئيسية عشان المحتوى يكون بالنص */
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+.layout-grid { /* هذا الكلاس عشان نعمل تخطيط شبكي (جريد) */
+    display: grid;
+    gap: 1.5rem;
+}
+
+.page-section { /* هذا الكلاس لأي قسم رئيسي بالصفحة */
+    padding: 6rem 0 2rem; /* بادينغ من فوق وتحت */
+}
+
+.action-button { /* ستايل الأزرار العامة بالموقع */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.3rem;
+    font-weight: var(--font-medium);
+    font-size: var(--tiny-font-size);
+    transition: background-color 0.3s;
+    gap: 0.3rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+body:not(.dark-theme) .action-button:hover { /* لون الزر عند التحويم في الوضع الفاتح */
+    background-color: hsl(28, 55%, 35%);
+}
+
+body.dark-theme .action-button:hover { /* لون الزر عند التحويم في الوضع الداكن */
+    background-color: hsl(28, 65%, 45%);
+}
+
+.action-button:focus { /* لما نضغط على الزر */
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/*==================== ستايل الشريط الجانبي (السايدبار) ====================*/
+.main-side-navigation {
+    position: fixed; /* يضل ثابت بمكانه */
+    top: 0;
+    left: -270px; /* مخفي برا الشاشة بالبداية */
+    width: 270px;
+    height: 100%;
+    background-color: var(--sidebar-bg);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    transition: left 0.4s ease-in-out, background-color 0.4s; /* حركة ناعمة لما يظهر ويختفي */
+    z-index: 100;
+}
+
+.main-side-navigation.show-sidebar { /* لما نضيف هذا الكلاس، السايدبار بيظهر */
+    left: 0;
+}
+
+.side-profile-box { /* صندوق صورة البروفايل والتوقيع */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.profile-picture-round { /* ستايل صورة البروفايل */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* عشان تكون دائرية */
+    object-fit: cover;
+    margin-bottom: 0;
+    border: none;
+}
+
+.signature-text-holder { /* الحاوية تبع التوقيع */
+    position: relative;
+    display: inline-block;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.signature-text-holder:hover { /* لما نحرك الماوس فوق التوقيع */
+    background-color: hsla(28, 50%, 45%, 0.1);
+}
+
+body.dark-theme .signature-text-holder:hover { /* نفس الشي بس بالوضع الداكن */
+    background-color: hsla(28, 60%, 55%, 0.1);
+}
+
+.my-signature-font { /* ستايل خط التوقيع */
+    font-family: 'TuesdayNight', cursive;
+    font-size: 1.8rem;
+    color: var(--first-color);
+    text-align: center;
+    display: block;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+}
+
+body.dark-theme .my-signature-font { /* لون التوقيع بالوضع الداكن */
+    color: var(--first-color);
+}
+
+.sidebar__name, /* هاي الكلاسات مش مستخدمة حالياً */
+.sidebar__title {
+    display: none;
+}
+
+/* حقوق النشر اللي بتظهر فوق بالسايدبار (مخفية بالوضع العادي) */
+.sidebar__copyright--top {
+    font-size: var(--smaller-font-size);
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 0;
+    line-height: 1.4;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    position: absolute;
+    left: -9999px;
+}
+
+body.dark-theme .sidebar__copyright--top {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+/*==================== التحكم بالثيم (فاتح/داكن) في السايدبار ====================*/
+.theme-switcher-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+.theme-switcher-area .mode-change-icon { /* أيقونة القمر/الشمس */
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+body.dark-theme .theme-switcher-area .mode-change-icon { /* لون الأيقونة بالوضع الداكن */
+    color: var(--title-color);
+}
+
+.theme-switcher-area .mode-change-icon:hover { /* لما نحرك الماوس فوق أيقونة الثيم */
+    color: var(--first-color);
+    transform: scale(1.15);
+}
+
+.theme-switcher-area .theme-separator-line { /* خط فاصل (مخفي حالياً) */
+    display: none;
+    width: 60px;
+    height: 1px;
+    background-color: var(--light-brown);
+    opacity: 0.8;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+body.dark-theme .theme-switcher-area .theme-separator-line {
+    background-color: var(--light-brown);
+}
+
+/*==================== قائمة التنقل في السايدبار ====================*/
+.side-menu-nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.navigation-list-items { /* القائمة نفسها */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 0;
+}
+
+.menu-list-entry { /* كل عنصر في القائمة */
+    width: 100%;
+}
+
+.nav-link-item { /* رابط كل عنصر في القائمة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    transition: color 0.3s;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.nav-link-item span {
+    position: relative;
+    z-index: 1;
+    font-size: var(--small-font-size);
+}
+
+.nav-link-item.active { /* لما يكون الرابط نشط (القسم تبعه ظاهر) */
+    background-color: transparent;
+}
+
+.nav-link-item.active span { /* لون النص للرابط النشط */
+    color: var(--first-color);
+}
+
+.nav-link-item.active,
+.nav-link-item:hover {
+    background-color: transparent;
+}
+
+body.dark-theme .nav-link-item.active,
+body.dark-theme .nav-link-item:hover {
+    background-color: transparent;
+}
+
+.nav-link-item:hover { /* لما نحرك الماوس فوق الرابط */
+    color: var(--first-color);
+}
+
+body.dark-theme .nav-link-item:hover {
+    color: var(--first-color);
+}
+
+.nav-link-item.active {
+    box-shadow: none;
+    padding-left: 0.6rem;
+    padding-top: 0.6rem;
+    border-radius: 0.5rem;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.nav-link-item::before { /* عنصر وهمي (مخفي) */
+    display: none !important;
+}
+
+#sidebar .menu-list-entry:nth-child(4) .nav-link-item:hover { /* ستايل خاص لرابع عنصر في القائمة */
+    color: hsl(28, 65%, 25%);
+}
+
+body.dark-theme #sidebar .menu-list-entry:nth-child(4) .nav-link-item:hover {
+    color: hsl(28, 70%, 35%);
+}
+
+#sidebar .menu-list-entry:last-child .nav-link-item.active span { /* ستايل خاص لآخر عنصر نشط */
+    color: var(--first-color);
+}
+
+.sidebar__social-links { /* هاي الكلاسات مش مستخدمة حالياً */
+    display: none;
+}
+
+.sidebar-bottom-area { /* منطقة أسفل السايدبار */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    position: relative;
+}
+
+.sidebar-bottom-area::before { /* خط فاصل قبل حقوق النشر */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: var(--first-color);
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+body.dark-theme .sidebar-bottom-area::before {
+    background-color: var(--first-color);
+}
+
+/* حقوق النشر اللي بتظهر تحت بالسايدبار (مخفية بالوضع العادي) */
+.bottom-copyright-text {
+    font-size: var(--smaller-font-size);
+    text-align: center;
+    color: var(--text-color);
+    line-height: 1.4;
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    display: none;
+}
+
+.bottom-copyright-text .colored-name { /* لون اسمي في حقوق النشر */
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+}
+
+/*==================== المحتوى الرئيسي للصفحة ====================*/
+.primary-page-content {
+    margin-left: 0; /* بالبداية ما في مارجن (للشاشات الصغيرة) */
+    transition: margin-left 0.4s ease-in-out; /* حركة ناعمة لما السايدبار يظهر */
+    min-height: 100vh;
+    background-color: var(--body-color);
+}
+
+.mobile-menu-toggler { /* زر فتح القائمة بالشاشات الصغيرة */
+    position: fixed; /* ثابت بمكانه */
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    background-color: var(--container-color);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 200;
+    display: block;
+}
+
+/*==================== قسم الصفحة الرئيسية (Home) ====================*/
+.welcome-area {
+    position: relative;
+    background-image: url('../images/hero.jpg'); /* صورة الخلفية */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--white-color);
+    text-align: center;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.welcome-area::before { /* طبقة تراكب سوداء شفافة على الصورة */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%);
+    z-index: 1;
+}
+
+.hero-content-wrapper { /* حاوية المحتوى داخل قسم Home */
+    position: relative;
+    z-index: 2;
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.hero-text-block { /* بلوك النص في قسم Home */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.personal-info-overlay { /* صندوق المعلومات الشخصية في قسم Home */
+    background-color: hsla(0, 0%, 100%, 0.85);
+    color: var(--text-color);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-color) 0 8px 24px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 0;
+    text-align: left;
+    margin-left: auto;
+    margin-right: 8rem;
+    margin-bottom: 0;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+body.dark-theme .personal-info-overlay { /* ستايل الصندوق بالوضع الداكن */
+    background-color: hsla(0, 0%, 12%, 0.85);
+    box-shadow: var(--shadow-color) 0 8px 24px;
+}
+
+.personal-info-overlay::before {
+    display: none;
+}
+
+.personal-info-overlay .main-heading-name { /* اسمي في الصندوق */
+    display: block;
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-25);
+    text-align: left;
+    padding-left: 0;
+}
+
+.personal-info-overlay .job-role-text { /* المسمى الوظيفي */
+    display: block;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    text-align: left;
+    padding-left: 0;
+}
+
+.personal-info-overlay .decorative-line-break { /* الخط الفاصل تحت المسمى الوظيفي */
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--first-color);
+    opacity: 0.6;
+    border-radius: 2px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.personal-info-overlay:hover .decorative-line-break { /* حركة الخط الفاصل عند التحويم */
+    width: calc(100% - 3rem);
+}
+
+.personal-info-overlay .home__subtitle { /* هذا subtitle خاص بـ Home */
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    margin-bottom: var(--mb-1);
+    position: relative;
+    padding-left: 40px;
+    padding-right: 0;
+    text-align: left;
+    padding: 0;
+}
+
+.personal-info-overlay .home__subtitle::before,
+.personal-info-overlay .home__subtitle::after {
+    content: '';
+    display: none;
+}
+
+.personal-info-overlay > div { /* كل سطر معلومات في الصندوق */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0.25rem;
+    padding-left: 0;
+}
+
+.personal-info-overlay > div:last-child {
+    margin-bottom: 0;
+}
+
+.personal-info-overlay i { /* أيقونات المعلومات */
+    font-size: 1.25rem;
+    color: var(--first-color);
+    order: 1;
+}
+
+.personal-info-overlay > div p,
+.personal-info-overlay > div a {
+    order: 2;
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.personal-info-overlay > div:hover p,
+.personal-info-overlay > div:hover a { /* لما نحرك الماوس على سطر معلومات */
+    color: var(--first-color);
+}
+
+/*==================== قسم عني (About Me) ====================*/
+.about-section-heading {}
+
+.about-section-heading--left { /* عنوان القسم على اليسار */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-bottom: var(--mb-2);
+}
+
+.small-section-label { /* العنوان الفرعي الصغير */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: var(--small-font-size);
+    color: var(--first-color);
+    margin-bottom: var(--mb-0-25);
+    position: relative;
+    padding-left: 20px;
+}
+
+.small-section-label::before { /* الخط الصغير قبل العنوان الفرعي */
+    content: '';
+    display: block;
+    width: 25px;
+    height: 1px;
+    background-color: var(--first-color);
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+    opacity: 0.7;
+}
+
+.small-section-label::after {
+    display: none;
+}
+
+.main-section-title { /* العنوان الرئيسي للقسم */
+    color: var(--title-color);
+    font-size: var(--h2-font-size);
+    background-color: transparent;
+    padding: 0;
+    margin-top: 0;
+    text-align: left;
+    display: block;
+}
+
+.main-section-title-about, /* هاي الكلاسات عشان لو بدنا نغير مارجن العنوان لكل قسم */
+.main-section-title-services,
+.main-section-title-work,
+.main-section-title-blog,
+.main-section-title-contact {
+    margin-bottom: var(--mb-2);
+}
+
+.about-layout-grid { /* تخطيط قسم About */
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: var(--mb-2);
+}
+
+.about-text-content { /* المحتوى النصي في قسم About */
+    order: 2;
+    text-align: left;
+}
+
+.about-my-photo { /* صورة قسم About */
+    display: block;
+    width: 300px;
+    max-width: 300px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 0; /* حواف حادة */
+    margin: -40px auto 1.5rem;
+    order: 1;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    box-shadow:
+        -12px 0 0 0 var(--very-light-brown),
+        0 12px 0 0 var(--very-light-brown),
+        var(--shadow-color) 0 8px 24px;
+    transform: translateX(10px);
+}
+
+body.dark-theme .about-my-photo { /* ظل الصورة بالوضع الداكن */
+    box-shadow:
+        -12px 0 0 0 var(--very-light-brown),
+        0 12px 0 0 var(--very-light-brown),
+        var(--shadow-color) 0 8px 24px;
+}
+
+.about-me-paragraph { /* الفقرة الوصفية في قسم About */
+    margin-bottom: var(--mb-1-5);
+    font-size: var(--small-font-size);
+}
+
+.details-list-items { /* قائمة التفاصيل الشخصية */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem 1.5rem;
+    margin-bottom: var(--mb-2);
+}
+
+.details-list-items li { /* كل عنصر في قائمة التفاصيل */
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0.25rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    font-size: var(--small-font-size);
+    gap: 0.25rem;
+}
+
+.detail-label-text { /* عنوان التفاصيل (مثلاً: Birthday) */
+    font-weight: var(--font-semi-bold);
+    color: var(--first-color);
+    margin-right: 0;
+    font-size: var(--small-font-size);
+    white-space: nowrap;
+}
+
+.detail-label-text::after { /* النقطتين اللي بعد العنوان */
+    content: ":";
+    color: var(--first-color);
+    margin-left: 0;
+}
+
+.details-list-items li span:not(.detail-label-text),
+.details-list-items li a {
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    text-align: left;
+    flex-grow: 0;
+}
+
+.details-list-items li a { /* روابط التفاصيل */
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.details-list-items li a:hover { /* لون الروابط عند التحويم */
+    color: var(--first-color);
+}
+
+.details-list-items li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/*==================== قسم الخدمات (Services) ====================*/
+.my-services-offered.page-section {
+    background-color: var(--brown-overlay); /* خلفية القسم */
+}
+
+.my-services-offered .about-section-heading--left,
+.portfolio-work-showcase .about-section-heading--left,
+.my-blog-posts .about-section-heading--left {
+    padding-left: 1rem;
+    margin-bottom: var(--mb-2);
+}
+
+.services-grid-layout { /* تخطيط بطاقات الخدمات */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.service-feature-card { /* بطاقة الخدمة الواحدة */
+    background-color: var(--container-color);
+    padding: 2.5rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: none;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, background-color 0.3s;
+    flex: 1;
+    min-width: 0;
+}
+
+.service-feature-card:hover { /* لما نحرك الماوس على بطاقة الخدمة */
+    transform: translateY(-0.5rem); /* تطلع شوي لفوق */
+    background-color: var(--darker-brown); /* يتغير لون الخلفية */
+}
+
+.service-icon-graphic { /* أيقونة الخدمة */
+    font-size: 3.5rem;
+    color: var(--first-color);
+    margin-bottom: 0.5rem;
+    display: block;
+    width: auto;
+    height: auto;
+    transition: color 0.3s;
+}
+
+.service-feature-card:hover .service-icon-graphic { /* لون الأيقونة عند التحويم */
+    color: var(--white-color);
+}
+
+.service-icon-graphic::after { /* الخط اللي تحت الأيقونة */
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--first-color);
+    opacity: 0.6;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    margin-bottom: var(--mb-1);
+    margin-left: 0;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.service-feature-card:hover .service-icon-graphic::after { /* حركة الخط عند التحويم */
+    width: calc(100% - 3rem);
+    background-color: var(--white-color);
+}
+
+body.dark-theme .service-icon-graphic {
+    filter: none;
+}
+
+.service-card-title { /* عنوان الخدمة */
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-75);
+    text-align: left;
+    transition: color 0.3s;
+}
+
+.service-feature-card:hover .service-card-title { /* لون العنوان عند التحويم */
+    color: var(--white-color);
+}
+
+.service-card-description { /* وصف الخدمة */
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1-5);
+    text-align: left;
+    transition: color 0.3s;
+}
+
+.service-feature-card:hover .service-card-description { /* لون الوصف عند التحويم */
+    color: hsla(0, 0%, 100%, 0.8);
+}
+
+.service-order-number { /* الرقم الكبير اللي ورا في البطاقة */
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
+    color: var(--first-color);
+    opacity: 0.1;
+    z-index: 0;
+    transition: color 0.3s, opacity 0.3s;
+}
+
+.service-feature-card:hover .service-order-number { /* لون الرقم عند التحويم */
+    color: var(--white-color);
+    opacity: 0.2;
+}
+
+/*==================== قسم الأعمال (Work) ====================*/
+.project-gallery-grid { /* تخطيط معرض الأعمال */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-item-card { /* بطاقة العمل الواحدة */
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-color) 0 8px 24px;
+    background-color: var(--container-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item-card:hover { /* لما نحرك الماوس على بطاقة العمل */
+    transform: translateY(-5px);
+}
+
+.project-thumbnail-image { /* صورة العمل */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: opacity 0.4s;
+}
+
+.project-item-card:hover .project-thumbnail-image { /* الصورة بتصير شفافة عند التحويم */
+    opacity: 0.3;
+}
+
+.project-overlay-info { /* الطبقة اللي بتظهر فوق الصورة عند التحويم */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--work-overlay-brown);
+    opacity: 0; /* مخفية بالبداية */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.project-item-card:hover .project-overlay-info { /* بتظهر عند التحويم */
+    opacity: 1;
+}
+
+.project-card-title { /* عنوان العمل */
+    color: var(--white-color);
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-5);
+    position: relative;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.project-card-title::after { /* الخط اللي تحت العنوان */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--white-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.project-item-card:hover .project-card-title::after { /* حركة الخط عند التحويم */
+    width: 60px;
+}
+
+.project-category-tag { /* فئة العمل */
+    color: hsla(0, 0%, 100%, 0.8);
+    font-size: var(--small-font-size);
+    transition: color 0.3s;
+}
+
+/*==================== قسم المدونة (Blog) ====================*/
+.my-blog-posts.page-section {
+    background-color: var(--brown-overlay); /* خلفية القسم */
+}
+
+.blog-posts-grid { /* تخطيط بطاقات المدونة */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.blog-entry-card { /* بطاقة المدونة الواحدة */
+    background-color: var(--container-color);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-color) 0 8px 24px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.blog-entry-card:hover { /* لما نحرك الماوس على بطاقة المدونة */
+    transform: translateY(-0.5rem);
+    background-color: var(--darker-brown);
+}
+
+.blog-post-image { /* صورة المدونة */
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.blog-entry-card:hover .blog-post-image { /* الصورة بتكبر شوي عند التحويم */
+    transform: scale(1.03);
+}
+
+.blog-card-details { /* تفاصيل المدونة (تاريخ وعنوان) */
+    padding: 1rem 1.5rem;
+}
+
+.blog-entry-card:hover .blog-post-date { /* لون التاريخ عند التحويم */
+    color: hsla(0, 0%, 100%, 0.8);
+}
+
+.blog-entry-card:hover .blog-post-title { /* لون العنوان عند التحويم */
+    color: var(--white-color);
+}
+
+.blog-post-date { /* تاريخ المدونة */
+    display: block;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color);
+    margin-bottom: var(--mb-0-5);
+    transition: color 0.3s;
+}
+
+.blog-post-title { /* عنوان المدونة */
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-75);
+    transition: color 0.3s;
+}
+
+/*==================== قسم التواصل (Contact) ====================*/
+.contact-me-section.page-section {
+    background-color: var(--body-color);
+    transition: none;
+}
+
+body.dark-theme .contact-me-section.page-section {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+/* ستايل نموذج إرسال الرسالة */
+.message-submission-form {
+    background-color: transparent;
+    padding: 3rem 2rem; /* كبرنا البادينغ شوي */
+    border-radius: 0; /* عملنا الحواف حادة */
+    box-shadow: none;
+    border: 1px solid var(--very-light-brown);
+    transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+body.dark-theme .message-submission-form {
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid var(--darker-brown);
+}
+
+.contact-layout-wrapper { /* تخطيط قسم التواصل */
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.contact-intro-text { /* النص التمهيدي في قسم التواصل */
+    margin-bottom: var(--mb-2);
+}
+
+/* ستايل عناصر معلومات الاتصال (رقم الهاتف، الإيميل...) */
+.single-contact-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.single-contact-line:hover { /* لما نحرك الماوس على سطر المعلومات */
+    transform: translateX(5px);
+    background-color: var(--container-color);
+}
+
+body.dark-theme .single-contact-line:hover {
+    background-color: var(--darker-brown);
+}
+
+.single-contact-line i { /* أيقونة سطر المعلومات */
+    font-size: 1.6rem;
+    color: var(--first-color);
+    transition: color 0.3s ease;
+}
+
+.single-contact-line:hover i { /* لون الأيقونة عند التحويم */
+    color: var(--title-color);
+}
+
+body.dark-theme .single-contact-line:hover i {
+    color: var(--white-color);
+}
+
+.contact-details-list .contact-detail-label { /* عنوان المعلومة (مثلاً: Phone) */
+    font-size: var(--normal-font-size);
+    color: var(--title-color);
+    margin-bottom: 0.25rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.single-contact-line:hover .contact-detail-label { /* لون العنوان عند التحويم */
+    color: var(--first-color);
+}
+
+body.dark-theme .single-contact-line:hover .contact-detail-label {
+    color: var(--white-color);
+}
+
+.contact-info-link { /* رابط المعلومة (مثلاً: رقم الهاتف) */
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.single-contact-line:hover .contact-info-link { /* لون الرابط عند التحويم */
+    color: var(--white-color);
+    text-decoration: underline;
+}
+
+body.dark-theme .single-contact-line:hover .contact-info-link {
+    color: var(--second-color);
+}
+
+/* هاي الكلاسات كانت موجودة قبل التعديل، ممكن تكون مكررة أو مش مستخدمة */
+.contact__info li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: var(--mb-1-5);
+}
+
+.contact__info li i {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.contact__info li .contact__title {
+    font-size: var(--normal-font-size);
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-25);
+}
+
+.contact__info li p,
+.contact__info li a {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.contact__info li a:hover {
+    color: var(--first-color);
+}
+
+.form-input-fields-group { /* مجموعة حقول الإدخال في النموذج */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-bottom: var(--mb-1-5);
+}
+
+.form-input-wrapper { /* حاوية كل حقل إدخال */
+    position: relative;
+    height: 3rem;
+    border-bottom: 1px solid var(--first-color);
+}
+
+.form-text-input { /* حقل الإدخال نفسه */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 1rem 0;
+    z-index: 1;
+    color: var(--first-color);
+}
+
+.form-field-label { /* التسمية اللي بتظهر فوق الحقل */
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.textarea-input-wrapper { /* حاوية حقل الرسالة (textarea) */
+    height: 7rem;
+    margin-bottom: var(--mb-2);
+}
+
+.textarea-input-wrapper textarea { /* حقل الرسالة نفسه */
+    resize: none;
+    color: var(--first-color);
+}
+
+.form-text-input:focus + .form-field-label, /* لما نضغط على الحقل أو يكون فيه نص */
+.form-text-input:not(:placeholder-shown).form-text-input:not(:focus) + .form-field-label {
+    top: -0.75rem;
+    font-size: var(--smaller-font-size);
+    color: var(--first-color);
+}
+
+/*==================== الفوتر (أسفل الصفحة) ====================*/
+.site-footer-area {
+    padding: 0.5rem 1rem;
+    font-size: var(--smaller-font-size);
+    background-color: var(--first-color);
+    color: var(--white-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-top: none;
+    gap: 0.5rem;
+    min-height: 50px;
+    margin-left: 0;
+    transition: margin-left 0.4s ease-in-out;
+}
+
+body.dark-theme .site-footer-area {
+    background-color: var(--first-color);
+    color: var(--white-color);
+}
+
+.social-media-links-group { /* مجموعة أيقونات السوشيال ميديا */
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.social-icon-link { /* أيقونة السوشيال ميديا الواحدة */
+    color: var(--white-color);
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.social-icon-link:hover { /* لون الأيقونة عند التحويم */
+    color: var(--second-color);
+}
+
+.copyright-notice-text { /* نص حقوق النشر */
+    display: block;
+    text-align: left;
+    color: var(--white-color);
+    opacity: 1;
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    position: relative;
+    flex-grow: 1;
+    min-width: fit-content;
+}
+
+/*==================== الميديا كويريز (عشان الموقع يكون متجاوب مع الشاشات المختلفة) ====================*/
+/* للشاشات الصغيرة جداً (أقل من 576px) */
+@media screen and (max-width: 576px) {
+    .site-footer-area { /* الفوتر بيصير عمودي */
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .copyright-notice-text { /* ترتيب نص حقوق النشر */
+        order: 2;
+        text-align: center;
+        font-size: var(--smaller-font-size);
+    }
+    .social-media-links-group { /* ترتيب أيقونات السوشيال ميديا */
+        order: 1;
+        justify-content: center;
+    }
+
+    /* إخفاء حقوق النشر في السايدبار على الشاشات الصغيرة جداً */
+    .sidebar__copyright--top,
+    .bottom-copyright-text {
+        display: none;
+    }
+
+    /* تعديل حجم صورة About للشاشات الصغيرة جداً */
+    .about-my-photo {
+        width: 250px;
+        height: 450px;
+        margin: -30px auto 1.5rem;
+    }
+}
+
+/*==================== زر الصعود لأعلى (Scroll Up) ====================*/
+.back-to-top-button {
+    position: fixed; /* ثابت بمكانه */
+    right: 1.5rem;
+    bottom: -20%; /* مخفي بالبداية */
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    font-size: 1.25rem;
+    z-index: 10;
+    opacity: 0.8;
+    transition: all 0.4s;
+}
+
+.back-to-top-button:hover { /* لما نحرك الماوس عليه */
+    opacity: 1;
+}
+
+.show-scroll-button { /* لما نضيف هذا الكلاس، الزر بيظهر */
+    bottom: 3rem;
+}
+
+/*==================== الميديا كويريز (تكملة) ====================*/
+/* للشاشات المتوسطة (أكبر من 768px) */
+@media screen and (min-width: 768px) {
+    .page-section {
+        padding: 8rem 0 2rem;
+    }
+
+    .site-content-container {
+        padding: 0 2rem;
+    }
+
+    .about-layout-grid { /* تخطيط قسم About بيصير عمودين */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .about-text-content {
+        order: 2;
+        text-align: left;
+    }
+
+    .about-my-photo {
+        order: 1;
+        width: 300px;
+        max-width: 300px;
+        height: 480px;
+        margin: -40px 0 1.5rem 0;
+        justify-self: start;
+        transform: translateX(10px);
+    }
+
+    .details-list-items { /* قائمة التفاصيل بتصير عمودين */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem 4rem;
+    }
+
+    .blog-posts-grid { /* تخطيط المدونة بيصير عمودين */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-layout-wrapper { /* تخطيط قسم التواصل بيصير عمودين */
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+    }
+
+    .contact-details-list {
+        margin-bottom: 0;
+    }
+
+    .form-input-fields-group { /* حقول الإدخال في نموذج التواصل بتصير عمودين */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* للشاشات الكبيرة (أكبر من 992px) (لما السايدبار بيظهر بشكل دائم) */
+@media screen and (min-width: 992px) {
+    .main-side-navigation { /* السايدبار بيضل ظاهر */
+        left: 0;
+    }
+
+    .primary-page-content { /* المحتوى الرئيسي بينزاح عشان السايدبار */
+        margin-left: 270px;
+    }
+
+    .mobile-menu-toggler { /* زر القائمة بيختفي */
+        display: none;
+    }
+
+    .hero-content-wrapper {
+        width: calc(100% - 270px);
+        margin-left: 270px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 3rem;
+    }
+
+    .main-section-title {
+        margin-bottom: var(--mb-3);
+    }
+
+    .about-layout-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .about-text-content {
+        grid-column: 1 / 2;
+        order: initial;
+    }
+
+    .about-my-photo {
+        grid-column: 2 / 3;
+        order: initial;
+        width: 350px;
+        max-width: 350px;
+        justify-self: end;
+        transform: translateX(10px);
+        margin: -60px 0 1.5rem 0;
+    }
+
+    .site-footer-area { /* الفوتر بينزاح عشان السايدبار */
+        margin-left: 270px;
+        width: calc(100% - 270px);
+    }
+
+    .sidebar__copyright--top { /* حقوق النشر العلوية بتظهر */
+        position: static;
+        left: auto;
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+    }
+
+    .bottom-copyright-text { /* حقوق النشر السفلية بتظهر */
+        display: block;
+        color: var(--text-color);
+    }
+}
+
+/* للشاشات الكبيرة جداً (أكبر من 1024px) */
+@media screen and (min-width: 1024px) {
+    :root { /* أحجام خطوط أكبر شوي */
+        --big-font-size: 3.5rem;
+        --h1-font-size: 2.5rem;
+        --h2-font-size: 1.75rem;
+        --h3-font-size: 1.5rem;
+        --normal-font-size: 1.125rem;
+        --small-font-size: 0.875rem;
+        --smaller-font-size: 0.813rem;
+        --tiny-font-size: 0.6875rem;
+    }
+
+    .site-content-container {
+        max-width: 1024px;
+        padding: 0 2rem;
+    }
+
+    .about-section-heading--left {
+        padding-left: 0;
+        margin-left: 0;
+        margin-bottom: var(--mb-3);
+    }
+
+    .small-section-label {
+        margin-left: 2rem;
+        padding-left: 20px;
+    }
+
+    .main-section-title {
+        margin-left: 2rem;
+        padding-left: 0;
+    }
+
+    .services-grid-layout,
+    .project-gallery-grid,
+    .blog-posts-grid,
+    .contact-layout-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* تعديلات للشاشات الصغيرة جداً (مرة ثانية لتأكيد بعض التعديلات) */
+@media screen and (max-width: 576px) {
+    .personal-info-overlay {
+        margin-right: auto;
+        max-width: 90%;
+    }
+
+    .details-list-items li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .detail-label-text {
+        min-width: unset;
+        display: block;
+        margin-bottom: 0.1rem;
+    }
+
+    .detail-label-text::after {
+        content: "";
+    }
+
+    .action-button {
+        padding: 0.4rem 0.8rem;
+        font-size: var(--tiny-font-size);
+        gap: 0.3rem;
+    }
+}
